@@ -123,7 +123,7 @@ export default function Main() {
             // mode: "no-cors",
             dataType: "text",
         };
-        fetch("http://api.aideeplabs.com/detectObjectsInVideo", requestOptions)
+        fetch("https://api.aideeplabs.com/detectObjectsInVideo", requestOptions)
             .then((response) => {console.log(response); return response.text()})
             .then((message) => {setVideoPrediction(message); setVideoLoadingPrediction(false)})
             .catch((error) => errorMessage(error));
@@ -285,7 +285,7 @@ export default function Main() {
                                     language="bash"
                                 >
                                     curl --location --request POST
-                                    'http://aideeplabs/EVE/detectObjectsInImage'
+                                    'https://aideeplabs/EVE/detectObjectsInImage'
                                     --form 'image=@"dogo.jpeg"'
                                 </SyntaxHighlighter>
                                 <Typography variant="body1">

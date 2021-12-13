@@ -92,7 +92,7 @@ export default function Main() {
             dataType: "text",
         };
     
-        fetch("http://api.aideeplabs.com/detectObjectsInImage", requestOptions)
+        fetch("https://api.aideeplabs.com/detectObjectsInImage", requestOptions)
             .then((response) => {console.log(response); return response.text()})
             .then((message) => {setImageImagePrediction(message); setImageLoadingPrediction(false)})
             .catch((error) => errorMessage(error));

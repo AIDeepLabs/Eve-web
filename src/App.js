@@ -92,7 +92,7 @@ export default function Main() {
             dataType: "text",
         };
     
-        fetch("http://localhost:8080/detectObjectsInImage", requestOptions)
+        fetch("http://api.aideeplabs.com/detectObjectsInImage", requestOptions)
             .then((response) => {console.log(response); return response.text()})
             .then((message) => {setImageImagePrediction(message); setImageLoadingPrediction(false)})
             .catch((error) => errorMessage(error));
@@ -107,7 +107,6 @@ export default function Main() {
 //   action={action}
 />);
     }
-    errorMessage("sdas");
 
     const predictVideo = (video) => {
         if (video === undefined) {
@@ -121,9 +120,10 @@ export default function Main() {
         var requestOptions = {
             method: "POST",
             body: formdata,
+            // mode: "no-cors",
             dataType: "text",
         };
-        fetch("http://localhost:8080/detectObjectsInVideo", requestOptions)
+        fetch("http://api.aideeplabs.com/detectObjectsInVideo", requestOptions)
             .then((response) => {console.log(response); return response.text()})
             .then((message) => {setVideoPrediction(message); setVideoLoadingPrediction(false)})
             .catch((error) => errorMessage(error));
